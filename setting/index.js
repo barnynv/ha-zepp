@@ -42,16 +42,29 @@ AppSettingsPage({
   build(props) {
     this.setState(props);
     const textInputStyle = {
-      marginTop: "4px",
       color: "#000000",
       fontSize: "15px",
       borderStyle: "solid",
       borderColor: "#000000",
       borderRadius: "2px",
       height: "28px",
-      width: "50%",
+      marginLeft: "200px",
       overflow: "hidden",
       borderWidth: "2px",
+      margin: "10px",
+    };
+    const textInputStyle2 = {
+      color: "#000000",
+      fontSize: "15px",
+      borderStyle: "solid",
+      borderColor: "#000000",
+      borderRadius: "2px",
+      width: "70%",
+      height: "28px",
+      marginLeft: "200px",
+      overflow: "hidden",
+      borderWidth: "2px",
+      margin: "10px",
     };
     let entityList = [];
     let filter = props.settingsStorage.getItem("filter")
@@ -90,16 +103,16 @@ AppSettingsPage({
           ),
           View({ style: { flex: 1 }},
             Button({
-              label: gettext('^'),
+              label: gettext('Top'),
               style: {
                 position: 'absolute',
                 bottom: '10px',
                 right: '0px',
                 minWidth: '32px',
-                height: '10px',
+                height: '20px',
                 borderRadius: '60px',
-                background: '#18BCF2',
-                color: 'white'
+                background: '#3ddc84',
+                color: 'black'
               },
               onClick: () => {
                 this.moveEntityToTop(i)
@@ -110,41 +123,47 @@ AppSettingsPage({
       );
     });
     return Section({}, [
+      Section({ style: {fontSize: '17px',fontWeight: 'bold',paddingLeft: '10px',paddingTop: '5px',paddingBottom: '5px'} }, "Home Assistant Access"),
+      Section({ style: {fontSize: '15px',paddingLeft: '10px'} }, "Local HA instance address"),
+      Section({ style: {fontSize: '13px',fontStyle: 'italic',paddingLeft: '10px'} }, "e.g. http://homeassistant.local:8123/"),
       TextInput({
-        label: 'Local HA instance address:',
         settingsKey: "localHAIP",
         subStyle: textInputStyle,
       }),
+      Section({ style: {fontSize: '15px',paddingLeft: '10px'} }, "External HA instance address"),
+      Section({ style: {fontSize: '13px',fontStyle: 'italic',paddingLeft: '10px'} }, "e.g. https://aguacatec.es/"),
       TextInput({
-        label: "External HA instance address:",
         settingsKey: "externalHAIP",
         subStyle: textInputStyle,
       }),
+      Section({ style: {fontSize: '15px',paddingLeft: '10px'} }, "Long access token"),
+      Section({ style: {fontSize: '13px',fontStyle: 'italic',paddingLeft: '10px'} }, "Create it from your profile in HA"),
       TextInput({
-        label: "Long access token:",
         settingsKey: "HAToken",
         subStyle: textInputStyle,
       }),
-      TextInput({
-        label: "Filter entities id:",
-        subStyle: textInputStyle,
-        settingsKey: "filter",
-      }),
       Section(
-        { style: {width: '50%'} },
+        { style: {width: '5px'} },
         Toggle({
-          label: "Update sensor data to HA, interval 1 hour (BETA)" +
-          "(works best if you turn all notifications OFF, this includes the calendar sync)",
           value: (props.settingsStorage.getItem("updateSensorsBool") === "true"),
           onChange: (value) => {
             props.settingsStorage.setItem("updateSensorsBool", value);
           },
         })
       ),
+      Section({ style: {fontSize: '15px',marginLeft: '60px',marginTop: '-30px'} }, "Update sensor data to HA every hour (BETA)"),
+      Section({ style: {fontSize: '13px',fontStyle: 'italic',marginLeft: '60px'} }, "It works better if you turn all notifications OFF"),
+      Section({ style: {fontSize: '17px',fontWeight: 'bold',paddingLeft: '10px',paddingTop: '10px',paddingBottom: '5px'} }, "Entities"),
+      Text({ style: {fontSize: '15px',paddingLeft: '10px'} }, "Search for the entities you want to control"),
+      Section({ style: {fontSize: '13px',fontStyle: 'italic',paddingLeft: '10px',paddingRight: '50px'} }, "You can search for an entity id (e.g. light.bulb), a whole domain (e.g. light), or leave it empty to show all your controllable entities (media player, light, switch, input_boolean, script, automation and binary sensor entities are supported)"),
+      TextInput({
+        subStyle: textInputStyle2,
+        settingsKey: "filter",
+      }),
       Section(
         {},
-        Button({
-          label: "Refresh entities",
+        Button({ style: {marginLeft: '75%',marginTop: '-75px',height: '28px'},
+          label: "Search",
           async onClick() {
             props.settingsStorage.removeItem("entityList");
             props.settingsStorage.setItem("listFetchRandom", Math.random());
@@ -152,8 +171,6 @@ AppSettingsPage({
           },
         })
       ),
-      Text({}, "Only the media player, light, switch, input_boolean, script, automation and (binary) " +
-      "sensor entities are supported for now:"),
       entityList.length > 0 &&
         View(
           {
