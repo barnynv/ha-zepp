@@ -244,6 +244,162 @@
         }
       ],
       "designWidth": 545
+    },
+    "amazfit-cheetah-pro": {
+      "module": {
+        "page": {
+          "pages": [
+            "page/home/index.page",
+            "page/light/index.page",
+            "page/light/effectPicker.page",
+            "page/media_player/index.page",
+            "page/test_page/index.page"
+          ],
+          "window": {
+            "navigationBarBackgroundColor": "#ffffff",
+            "navigationBarTextStyle": "black",
+            "navigationBarTitleText": "Home Assistant",
+            "backgroundColor": "#eeeeee",
+            "backgroundTextStyle": "light"
+          }
+        },
+        "app-side": {
+          "path": "app-side/index"
+        },
+        "setting": {
+          "path": "setting/index"
+        }
+      },
+      "platforms": [
+        {
+          "name": "Cheetah",
+          "deviceSource": 8126720
+        },
+        {
+          "name": "CheetahW",
+          "deviceSource": 8126721
+        }
+      ],
+      "designWidth": 480
+    },
+    "amazfit-active": {
+      "module": {
+        "page": {
+          "pages": [
+            "page/home/index.page",
+            "page/light/index.page",
+            "page/light/effectPicker.page",
+            "page/media_player/index.page",
+            "page/test_page/index.page"
+          ],
+          "window": {
+            "navigationBarBackgroundColor": "#ffffff",
+            "navigationBarTextStyle": "black",
+            "navigationBarTitleText": "Home Assistant",
+            "backgroundColor": "#eeeeee",
+            "backgroundTextStyle": "light"
+          }
+        },
+        "app-side": {
+          "path": "app-side/index"
+        },
+        "setting": {
+          "path": "setting/index"
+        }
+      },
+      "platforms": [
+        {
+          "name": "Hannover（海外版）",
+          "deviceSource": 8323329
+        },
+        {
+          "name": "Hannover（国内）",
+          "deviceSource": 8323328
+        }
+      ],
+      "designWidth": 390
+    },
+    "amazfit-balance": {
+      "module": {
+        "page": {
+          "pages": [
+            "page/home/index.page",
+            "page/light/index.page",
+            "page/light/effectPicker.page",
+            "page/media_player/index.page",
+            "page/test_page/index.page"
+          ],
+          "window": {
+            "navigationBarBackgroundColor": "#ffffff",
+            "navigationBarTextStyle": "black",
+            "navigationBarTitleText": "Home Assistant",
+            "backgroundColor": "#eeeeee",
+            "backgroundTextStyle": "light"
+          }
+        },
+        "app-side": {
+          "path": "app-side/index"
+        },
+        "setting": {
+          "path": "setting/index"
+        }
+      },
+      "platforms": [
+        {
+          "name": "Monaco",
+          "deviceSource": 8519936
+        },
+        {
+          "name": "MonacoWN",
+          "deviceSource": 8519937
+        },
+        {
+          "name": "MonacoW",
+          "deviceSource": 8519939
+        }
+      ],
+      "designWidth": 480
+    },
+    "amazfit-gtr-3-pro": {
+      "module": {
+        "page": {
+          "pages": [
+            "page/home/index.page",
+            "page/light/index.page",
+            "page/light/effectPicker.page",
+            "page/media_player/index.page",
+            "page/test_page/index.page"
+          ],
+          "window": {
+            "navigationBarBackgroundColor": "#ffffff",
+            "navigationBarTextStyle": "black",
+            "navigationBarTitleText": "Home Assistant",
+            "backgroundColor": "#eeeeee",
+            "backgroundTextStyle": "light"
+          }
+        },
+        "app-side": {
+          "path": "app-side/index"
+        },
+        "setting": {
+          "path": "setting/index"
+        }
+      },
+      "platforms": [
+        {
+          "name": "Madrid",
+          "deviceSource": 229
+        },
+        {
+          "name": "MadridW",
+          "deviceSource": 230
+        },
+        {
+          "name": "Madrid2",
+          "deviceSource": 6095106
+        }
+      ],
+      "designWidth": 480
     }
   },
   "i18n": {
