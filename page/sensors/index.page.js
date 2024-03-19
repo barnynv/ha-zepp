@@ -14,12 +14,12 @@ extendLocale({
   },
   "No connection to\n the application": {
       "en-US": "No connection to\n the application",
-      "es-ES": ""No hay conexión\n con la aplicación"",
-      "it-IT": ""Nessuna connessione\n all'applicazione"", 
-      "fr-FR": ""Aucune connexion à\n l'application"", 
-      "pt-PT": ""Sem conexão com\n o aplicativo"", 
-      "zh-CN": "“没有连接到应用程序”", 
-      "ru-RU": "«Нет соединения\n с приложением»"
+      "es-ES": "No hay conexión con\n la aplicación",
+      "it-IT": "Nessuna connessione\n all'applicazione", 
+      "fr-FR": "Aucune connexion\n à l'application", 
+      "pt-PT": "Sem conexão\n com o aplicativo", 
+      "zh-CN": "没有连接到应用程序", 
+      "ru-RU": "Нет соединения\n с приложением"
   },
   "Loading...": {
       "en-US": "Loading...",
