@@ -1,5 +1,64 @@
 // import { getScrollListDataConfig } from '../../utils'
+import {t, extendLocale} from "../../lib/i18n";
 import { DEVICE_HEIGHT, DEVICE_WIDTH, TOP_BOTTOM_OFFSET } from "./index.style";
+
+extendLocale({
+  "Details": {
+      "en-US": "Details",
+      "es-ES": "Detalles",
+      "it-IT": "Dettagli", 
+      "fr-FR": "Détails",
+      "pt-PT": "Detalhes", 
+      "zh-CN": "细节", 
+      "ru-RU": "Подробности"
+  },
+  "unavailable": {
+      "en-US": "Unavailable",
+      "es-ES": "No disponible",
+      "it-IT": "Non disponibile", 
+      "fr-FR": "Indisponible", 
+      "pt-PT": "Indisponível", 
+      "zh-CN": "不可用", 
+      "ru-RU": "недоступен"
+  },
+  "on": {
+      "en-US": "On",
+      "es-ES": "Encendido",
+      "it-IT": "Acceso", 
+      "fr-FR": "Allumé", 
+      "pt-PT": "ligado", 
+      "zh-CN": "切换到", 
+      "ru-RU": "включен" 
+  },
+  "Cancel": {
+      "en-US": "Cancel",
+      "es-ES": "Cancelar",
+      "it-IT": "Annulla", 
+      "fr-FR": "Annuler", 
+      "pt-PT": "Cancelar", 
+      "zh-CN": "取消", 
+      "ru-RU": "отмена" 
+  },
+  "Run": {
+      "en-US": "Run",
+      "es-ES": "Activar",
+      "it-IT": "Funzionare", 
+      "fr-FR": "courir", 
+      "pt-PT": "Ativar", 
+      "zh-CN": "启用", 
+      "ru-RU": "Активировать" 
+  },
+  "An error occurred": {
+      "en-US": "An error occurred",
+      "es-ES": "Ocurrió un error",
+      "it-IT": "Si è verificato un errore", 
+      "fr-FR": "Une erreur s'est produite", 
+      "pt-PT": "Um erro ocorreu", 
+      "zh-CN": "发生错误", 
+      "ru-RU": "Произошла ошибка" 
+  }
+});
+
 
 const {
   messageBuilder,
@@ -111,7 +170,7 @@ Page({
             y: this.state.y + titleHeight,
             w: DEVICE_WIDTH,
             h: valueHeight,
-            text: item.state,
+            text: t(item.state),
             text_size: 20,
             color: 0xffffff,
             align_h: hmUI.align.CENTER_H,
@@ -160,7 +219,7 @@ Page({
       y: this.state.y + titleHeight,
       w: DEVICE_WIDTH / 2,
       h: valueHeight,
-      text: "Details",
+      text: t("Details"),
       normal_color: 0x18bcf2,
       press_color: 0x61cef2,
       radius: 20,
@@ -204,7 +263,7 @@ Page({
           method: "PRESS_BUTTON",
           entity_id: item.key,
           service: item.type,
-          current_state: item.state,
+          current_state: t(item.state),
         });
       },
     });
@@ -284,7 +343,7 @@ Page({
     return this.drawTextMessage("Loading...");
   },
   drawError(message) {
-    let text = "An error occurred";
+    let text = t("An error occurred");
     if (typeof message === "string") {
       text += ":\n";
       text += message;
