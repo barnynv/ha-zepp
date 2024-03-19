@@ -12,6 +12,24 @@ extendLocale({
       "zh-CN": "细节", 
       "ru-RU": "Подробности"
   },
+  "No connection to\n the application": {
+      "en-US": "No connection to\n the application",
+      "es-ES": ""No hay conexión\n con la aplicación"",
+      "it-IT": ""Nessuna connessione\n all'applicazione"", 
+      "fr-FR": ""Aucune connexion à\n l'application"", 
+      "pt-PT": ""Sem conexão com\n o aplicativo"", 
+      "zh-CN": "“没有连接到应用程序”", 
+      "ru-RU": "«Нет соединения\n с приложением»"
+  },
+  "Loading...": {
+      "en-US": "Loading...",
+      "es-ES": "Cargando...",
+      "it-IT": "Caricamento...", 
+      "fr-FR": "Chargement...", 
+      "pt-PT": "Carregando...", 
+      "zh-CN": "加载中...", 
+      "ru-RU": "Загрузка..."
+  },
   "unavailable": {
       "en-US": "Unavailable",
       "es-ES": "No disponible",
